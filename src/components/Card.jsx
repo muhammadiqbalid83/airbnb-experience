@@ -1,20 +1,24 @@
-import katrie from "../assets/katie-zaferes.png";
-import star from "../assets/star.png";
-
-export default function Card() {
+export default function Card({
+  img,
+  rating,
+  reviewCount,
+  country,
+  title,
+  price,
+}) {
   return (
-    <div src={katrie} className="card--image">
+    <div className="card--image">
       <div className="card--stats">
-        <img src={katrie} alt="images" className="card--image" />
+        <img src={img} alt="images" className="card--image" />
         <div className="card--stats">
-          <img src={star} alt="images" className="card--star" />
-          <span>5.0</span>
-          <span>(6)</span>
-          <span>USA</span>
+          <img src={img} alt="images" className="card--star" />
+          <span>{rating}</span>
+          <span>({reviewCount})</span>
+          <span>{country}</span>
         </div>
-        <p>Life Lessons with Katie Zafares</p>
+        <p>{title}</p>
         <p>
-          <span className="bold">From $136</span> / person
+          <span className="bold">From ${price}</span> / person
         </p>
       </div>
     </div>
